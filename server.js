@@ -1,5 +1,5 @@
 const PORT = 8000;
-const API_KEY = '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';
+const API_KEY = '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';
 const express = require('express');
 const cors = require('cors');
 const app = express();

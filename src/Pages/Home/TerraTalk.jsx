@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 const TerraTalk = (props) => {
-    const preface = 'Generate an Overpass-QL Query that displays node(s) for the following prompt: "I am looking for ';
+    const preface = 'Generate an Overpass-QL Query that displays the following prompt: "I am looking for ';
     const postface = '" Only generate the Query Language Code. Do not add any comments.';
 
     const [userIn, setUserIn] = useState('');
@@ -22,6 +22,7 @@ const TerraTalk = (props) => {
             const data = await serverResponse.json();
             console.log(data);
             setOverpassQuery(data.choices[0].message.content);
+            console.log(overpassQuery);
         }
         catch (error) {
             console.error(error)
