@@ -1,12 +1,12 @@
 const PORT = 8000;
-const API_KEY = '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';
+const API_KEY = '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';
 const express = require('express');
 const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors());
-console.log("Running");
-app.post('/completions', async (request, response) => {
+
+app.post('/completions', async (req, res) => {
     const options = {
         method: "POST",
         headers: {
@@ -17,20 +17,21 @@ app.post('/completions', async (request, response) => {
             model: "gpt-3.5-turbo",
             messages: [{
                 role: "user",
-                content: "what is 2 + 2?"
+                content: req.body.message
             }],
-            max_tokens: 100
+            max_tokens: 100,
         })
     }
     try {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', options);
-        const data = await response.json();
-        response.send(data);
+        console.log("Attempting to fetch response from openai");
+        const APIResponse = await fetch("https://api.openai.com/v1/chat/completions", options);
+        const data = await APIResponse.json();
+        res.send(data);
     } catch (error) {
-        console.error(error);
+        console.error(error)
     }
 });
 app.listen(PORT, () => {
-    console.log("PORT: " + PORT);
+    console.log("running on port " + PORT);
 });
 
