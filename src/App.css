@@ -341,7 +341,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-left: 130px;
-  padding-top: 400px;
+  padding-top: 200px;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
@@ -374,4 +374,9 @@ h3 {
   font-size: large;
   border-radius: 8px;
   border: 1px solid grey;
+}
+
+.map--box {
+  width: 75%;
+  height: 100%;
 }
