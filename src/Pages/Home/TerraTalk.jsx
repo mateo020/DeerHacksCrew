@@ -1,35 +1,5 @@
-<<<<<<< Updated upstream
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-
-const TerraTalk = (props) => {
-    const [prompt, setPrompt] = useState('')
-    
-
-    return (
-        <section id="terraTalk" className="terra">
-        <div className="terra--content-box">
-            <div className="terra--content">
-   
-                <label className='prompt--box'>
-                <input
-                    value={prompt}
-                    placeholder="Enter a prompt"
-                    onChange={(ev) => setPrompt(ev.target.value)}
-                    className={'prompt--box'}
-                />
-                </label>
-
-            </div>
-            <button className="btn btn-primary">Search</button>
-        </div>
-
-        <div>MAP PLACEHOLDER</div>
-    </section>
-=======
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
 const TerraTalk = (props) => {
     const preface = 'Generate an Overpass-QL Query that displays node(s) for the following prompt: "I am looking for ';
     const postface = '" Only generate the Query Language Code. Do not add any comments.';
@@ -77,10 +47,7 @@ const TerraTalk = (props) => {
             </div>
             <div>MAP PLACEHOLDER</div>
         </section>
->>>>>>> Stashed changes
     )
 }
-
-
 export default TerraTalk;
 
