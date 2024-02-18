@@ -1,4 +1,14 @@
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+
 export default function WelcomeSection() {
+
+    const navigate = useNavigate();
+
+    const handleTryNow = () => {
+    navigate('/terratalk');
+    }
+
     return (
         <section id="welcomeSection" className="welcome--section">
             <div className="welcome--section--content-box">
@@ -15,7 +25,7 @@ export default function WelcomeSection() {
                     </p>
                 </div>
                 <br/>
-                <button className="btn btn-primary">Try now</button>
+                <button className="btn btn-primary" onClick={handleTryNow}>Try now</button>
             </div>
 
             <div className="welcome--section--img">
