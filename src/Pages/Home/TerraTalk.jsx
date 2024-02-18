@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { MapContainer, TileLayer } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 const TerraTalk = (props) => {
     const preface = 'Generate an Overpass-QL Query that displays the following prompt: "I am looking for ';
     const postface = '" Only generate the Query Language Code. Do not add any comments.';
@@ -46,7 +48,12 @@ const TerraTalk = (props) => {
                 </div>
                 <button className="btn btn-primary" onClick={() => { getOverpassQuery() }}>Search</button>
             </div>
-            <div>MAP PLACEHOLDER</div>
+            <MapContainer center={[51.505, -0.09]} zoom={13} style={{ height: "400px", width: "100%" }}>
+                <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                />
+            </MapContainer>
         </section>
     )
 }
