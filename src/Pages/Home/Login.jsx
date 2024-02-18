@@ -39,11 +39,13 @@ return (
     <div className={'title--container'}>
       <div>Login</div>
     </div>
-    <br />
+    <br/>
+    <div>Not registered yet? Sign up</div>
+    <br/>
     <div className={'input--container'}>
       <input
         value={email}
-        placeholder="Enter your email here"
+        placeholder="Email"
         onChange={(ev) => setEmail(ev.target.value)}
         className={'input--box'}
       />
@@ -53,7 +55,7 @@ return (
     <div className={'input--container'}>
       <input
         value={password}
-        placeholder="Enter your password here"
+        placeholder="Password"
         onChange={(ev) => setPassword(ev.target.value)}
         className={'input--box'}
       />
@@ -62,6 +64,10 @@ return (
     <br />
     <div className={'input--container'}>
       <button className="btn btn-primary" onClick={handleLogin}>Log in</button>
+    </div>
+
+    <div className='logo--container'>
+      <img src="./img/logo.svg" alt="Logoipsum"></img>
     </div>
   </div>
 )

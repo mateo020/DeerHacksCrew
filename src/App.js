@@ -15,7 +15,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Login />}></Route>
             <Route path="/home" element={<><Navbar /><Home /></>}></Route>
-            <Route path="/terratalk" element={<TerraTalk />}></Route> {/* TerraTalk route */}
+            <Route path="/terratalk" element={<><Navbar /><TerraTalk /></>}></Route> {/* TerraTalk route */}
             <Route path="*" element={<div>404 Not Found</div>}></Route>
           </Routes>
       </Router>

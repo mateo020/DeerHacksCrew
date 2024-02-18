@@ -18,9 +18,9 @@ p {
 }
 
 :root {
-  --primary: #5e3bee;
-  --heading-color: #282938;
-  --bg-shade: #f5fcff;
+  --primary: #3939EB;
+  --heading-color: #292929;
+  --bg-shade: #f9f9f9;
   --github: #e62872;
   --darkblue: #1c1e53;
   --black: #000000;
@@ -201,7 +201,7 @@ h3 {
 .welcome--section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 130px;
+  padding-left: 130px;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
@@ -258,14 +258,16 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .title--container {
   display: flex;
   flex-direction: column;
+  color: var(--primary);
+  font-family: "Helvetica", sans-serif;
   font-size: 64px;
-  font-weight: bolder;
+  font-weight: 600;
   align-items: center;
   justify-content: center;
 }
@@ -323,4 +325,49 @@ h3 {
   border: 1px solid var(--primary);
 }
 
+.logo--container {
+  position: fixed;
+  justify-content: center;
+  bottom: 0;
+  padding-bottom: 20px;
+}
 
+/* terra talk */
+.terra {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-left: 130px;
+  padding-top: 400px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background-color: var(--white);
+}
+
+.terra--content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+
+.terra--content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 21.333px;
+}
+
+.terra--section--content-box > button {
+  margin-top: 21.333px;
+}
+
+.prompt--box {
+  align-items: flex-start;
+  height: 50px;
+  width: 600px;
+  font-size: large;
+  border-radius: 8px;
+  border: 1px solid grey;
+}

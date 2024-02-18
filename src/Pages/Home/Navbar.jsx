@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
     const [navActive, setNavActive] = useState(false);
@@ -10,6 +11,12 @@ function Navbar() {
 
     const closeMenu = () => {
         setNavActive(false);
+    }
+
+    const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+    navigate('/');
     }
 
     useEffect(() => {
@@ -45,7 +52,7 @@ function Navbar() {
             <span className="nav__hamburger__line"></span>
             </a>
 
-            <Link onClick={closeMenu} activeClass="navbar--active-content" spy={true} smooth={true} offset={-70} duration={500} to="Contact" className="btn btn-outline-primary">Log in</Link>
+            <Link onClick={handleLoginClick} activeClass="navbar--active-content" spy={true} smooth={true} offset={-70} duration={500} to="Contact" className="btn btn-outline-primary">Log in</Link>
         </nav>
     );
 
