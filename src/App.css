@@ -317,4 +317,10 @@ h3 {
   padding-left: 8px;
 }
 
+.input--button {
+  color: var(--primary);
+  background-color: var(--white);
+  border: 1px solid var(--primary);
+}
+
 

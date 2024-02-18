@@ -5,9 +5,9 @@ export default function WelcomeSection() {
                 <div className="welcome--section--content">
                     <p className="section--title">Meet Terra</p>
                     <h1 className="welcome--section--title">
-                        <span className="welcome--section--title--color">Your AI Urban</span>
+                        <span className="welcome--section--title--color">Your AI</span>
                         <br/>
-                        Assistant
+                        Urban Assistant
                     </h1>
                     <p className="welcome--section--description">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.

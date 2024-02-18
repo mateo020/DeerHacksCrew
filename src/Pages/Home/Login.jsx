@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const Login = (props) => {
   const [email, setEmail] = useState('')
@@ -7,11 +7,12 @@ const Login = (props) => {
   const [emailError, setEmailError] = useState('')
   const [passwordError, setPasswordError] = useState('')
 
-  const navigate = useNavigate()
+  const handleLogin = () => {
+    console.log('Login stuff here');
+    navigate('/home');
+  };
 
-  const onButtonClick = () => {
-    // You'll update this function later...
-  }
+  const navigate = useNavigate();
 
   return (
     <div className={'main--container'}>
@@ -40,7 +41,7 @@ const Login = (props) => {
       </div>
       <br />
       <div className={'input--container'}>
-        <input className={'input--button'} type="button" onClick={onButtonClick} value={'Log in'} />
+        <button className="btn btn-primary" onClick={handleLogin}>Log in</button>
       </div>
     </div>
   )
