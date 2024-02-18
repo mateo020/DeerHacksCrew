@@ -195,6 +195,10 @@ h3 {
   color: var(--primary);
 }
 
+.navbar--logo:hover{
+  cursor: pointer;
+}
+
 
 
 /* welcome section style */

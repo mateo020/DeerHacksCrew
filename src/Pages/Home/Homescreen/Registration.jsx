@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const Login = (props) => {
+const Registration = (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [emailError, setEmailError] = useState('')
@@ -32,8 +32,8 @@ const handleLogin = () => {
     navigate('/home');
   };
 
-const handleRegister = () => {
-  navigate('/register')
+const redirectLogin = () => {
+    navigate('/');
 }
 
 const navigate = useNavigate();
@@ -41,13 +41,13 @@ const navigate = useNavigate();
 return (
   <div className={'main--container'}>
     <div className={'title--container'}>
-      <div>Login</div>
+      <div>Register</div>
     </div>
     <br/>
     <div>
-        Not registered yet?&nbsp;
-        <a href="#" onClick={handleRegister} style={{cursor: 'pointer', textDecoration: 'underline', color: 'blue'}}>
-          Sign up
+        Have an account? &nbsp;
+        <a href="#" onClick={redirectLogin} style={{cursor: 'pointer', textDecoration: 'underline', color: 'blue'}}>
+          Log in
         </a>
     </div>
     <br/>
@@ -72,7 +72,7 @@ return (
     </div>
     <br />
     <div className={'input--container'}>
-      <button className="btn btn-primary" onClick={handleLogin}>Log in</button>
+      <button className="btn btn-primary" onClick={handleLogin}>Register</button>
     </div>
 
     <div className='logo--container'>
@@ -82,4 +82,4 @@ return (
 )
 }
 
-export default Login
+export default Registration

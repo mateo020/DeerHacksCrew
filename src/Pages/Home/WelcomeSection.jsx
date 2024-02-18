@@ -6,7 +6,7 @@ export default function WelcomeSection() {
     const navigate = useNavigate();
 
     const handleTryNow = () => {
-    navigate('/terratalk');
+        navigate('/terratalk');
     }
 
     return (
@@ -20,11 +20,11 @@ export default function WelcomeSection() {
                         Urban Assistant
                     </h1>
                     <p className="welcome--section--description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        <br/> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum voluptate enim veniam.
+                        Effortlessly find georeferenced information anywhere.
+                        <br/>
+                        Ask a question in natural language, and let Terra do the rest.
                     </p>
                 </div>
-                <br/>
                 <button className="btn btn-primary" onClick={handleTryNow}>Try now</button>
             </div>
 

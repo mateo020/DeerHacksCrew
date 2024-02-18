@@ -13,11 +13,15 @@ function Navbar() {
         setNavActive(false);
     }
 
-    const navigate = useNavigate();
+    const goHome = () => {
+        navigate('/home');
+    }
 
     const handleLoginClick = () => {
-    navigate('/');
+        navigate('/');
     }
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleResize = () => {
@@ -42,8 +46,8 @@ function Navbar() {
 
     return (
         <nav className={`navbar ${navActive? "active": ""}`}>
-            <div>
-                <img src="./img/logo.svg" alt="Logoipsum"></img>
+            <div className="navbar--logo--container">
+                <img className="navbar--logo" src="./img/logo.svg" alt="Logo" onClick={goHome}></img>
             </div>
             <a className={`nav__hamburger ${navActive ? "active" : ""}`} onclick={toggleNav}>
             
