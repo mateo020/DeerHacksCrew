@@ -5,9 +5,15 @@ type Data = {
   name: string;
 };
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>,
-) {
-  res.status(200).json({ name: "John Doe" });
+export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+  console.log(req.method);
+  if (req.method === "GET") {
+    res.status(200).json({ name: "Bob" });
+  } else if (req.method === "POST") {
+    
+  }
+
+
+  // console.log('api key', process.env.NEXT_PUBLIC_API_KEY);
+
 }

@@ -2,10 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import WelcomeSection from "@/components/WelcomeSection.jsx";
+import Navbar from "@/components/Navbar"
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+
+
   return (
     <>
       <Head>
@@ -15,7 +19,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hello World</h1>
+        <h2>{'/*\n' + 'I am looking for soccer fields in Mississauga\n' + '*/\n' + 'area[name="Mississauga"]->.a;\n' + 'way[leisure=soccer_pitch](area.a);\n' + 'out body;\n' + '>;\n' + 'out skel qt;'}</h2>
+        <WelcomeSection/>
       </main>
     </>
   );
