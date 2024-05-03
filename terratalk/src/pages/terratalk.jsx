@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
-// import { MapContainer, TileLayer } from 'react-leaflet';
-//import 'leaflet/dist/leaflet.css';
+import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
+import dynamic from 'next/dynamic'
+
+const DynamicMap = dynamic(() => import('@/components/Map.tsx'), {
+    ssr: false,
+});
+
 
 export default function TerraTalk() {
     const preface = 'Generate an Overpass-QL Query that displays the following prompt: "I am looking for "';
@@ -36,6 +41,7 @@ export default function TerraTalk() {
                 <button className="btn btn-primary" onClick={getOverpassResponse}>Search</button>
                 <h4>{overpassQuery}</h4>
             </div>
+            <DynamicMap/>
         </section>
     )
 }
