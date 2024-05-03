@@ -11,10 +11,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     try {
         const completion = await openai.chat.completions.create({
-            messages: [{ role: "system", content: "create an overpass ql query for:" + userIn }],
-            model: "gpt-3.5-turbo",
+            messages: [{ role: "system", content: "create an overpass ql query for:" + userIn + ". Only generate the Query Language Code. Do not add any comments." }],
+            model: "gpt-4",
         });
         res.status(200).json(completion.choices[0])
+        console.log(completion.choices[0])
 
     } catch (err: any) {
         console.log("error using OpenAI");

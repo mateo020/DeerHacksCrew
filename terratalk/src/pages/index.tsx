@@ -19,7 +19,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h2>{'/*\n' + 'I am looking for soccer fields in Mississauga\n' + '*/\n' + 'area[name="Mississauga"]->.a;\n' + 'way[leisure=soccer_pitch](area.a);\n' + 'out body;\n' + '>;\n' + 'out skel qt;'}</h2>
         <WelcomeSection/>
       </main>
     </>
