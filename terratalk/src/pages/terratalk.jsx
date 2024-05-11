@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
@@ -14,6 +14,7 @@ export default function TerraTalk() {
     const postface = ' Only generate the Query Language Code. Do not add any comments.';
     const [userIn, setUserIn] = useState('');
     const [overpassQuery, setOverpassQuery] = useState('');
+    const [overpassResponse, setOverpassResponse] = useState(null);
 
     async function getOverpassResponse() {
         const response = (await axios.get("/api/openai", {
@@ -21,9 +22,32 @@ export default function TerraTalk() {
                 userIn: userIn,
             }
         })).data;
-        console.log(response.message.content);
         setOverpassQuery(response.message.content);
+        //console.log(response.message.content)
     };
+
+    useEffect(() => {
+        if (overpassQuery) {
+            fetchOverpassData();
+        }
+    }, [overpassQuery]);
+
+    async function fetchOverpassData() {
+        try {
+            const response = await fetch("https://overpass-api.de/api/interpreter", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `data=${encodeURIComponent(overpassQuery)}`
+            });
+            const data = await response.json();
+            setOverpassResponse(JSON.stringify(data, null, 2));
+            //console.log(JSON.stringify(data, null, 2));
+        } catch (error) {
+            console.error('Error fetching Overpass data:', error);
+        }
+    }
 
     return (
         <section id="terraTalk" className="terra">
@@ -41,7 +65,7 @@ export default function TerraTalk() {
                 <button className="btn btn-primary" onClick={getOverpassResponse}>Search</button>
                 <h4>{overpassQuery}</h4>
             </div>
-            <DynamicMap/>
+            <DynamicMap locations = {overpassResponse}/>
         </section>
     )
 }

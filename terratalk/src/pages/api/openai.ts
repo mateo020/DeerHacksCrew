@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     try {
         const completion = await openai.chat.completions.create({
-            messages: [{ role: "system", content: "create an overpass ql query for:" + userIn + ". Only generate the Query Language Code. Do not add any comments." }],
+            messages: [{ role: "system", content: "Generate an Overpass QL query to find: " + userIn + ". Only generate the Query Language Code. Do not add any comments." }],
             model: "gpt-4",
         });
         res.status(200).json(completion.choices[0])
